@@ -4,7 +4,7 @@ A multi-source data analytics project comparing **AI adoption, renewable energy,
 
 This repository is being developed as a reproducible MSc data-science project and portfolio case study in **data acquisition, cleaning, validation, multi-source integration, missing-data analysis, KPI construction and comparative visualisation**.
 
-## Recruiter quick scan
+## Recruiter / policy quick scan
 
 **Skills demonstrated:** Python · Pandas · NumPy · data cleaning · data validation · joins/merges · missingness analysis · longitudinal data · KPI design · Eurostat · OECD · World Bank · Matplotlib · reproducible analytics
 
@@ -13,6 +13,20 @@ This repository is being developed as a reproducible MSc data-science project an
 ## Analytical question
 
 How do European economies differ in their adoption of artificial intelligence, innovation investment, renewable-energy transition and broader economic capacity — and what patterns become visible when these indicators are analysed together rather than in isolation?
+
+## Why this matters for policy and sustainable development
+
+Digital transformation, innovation capacity and energy transition are often discussed separately even though policy choices interact across all three. This project creates a reproducible evidence base for comparing those dimensions while making differences in coverage and reporting periods explicit.
+
+The analytical workflow is relevant to questions such as:
+
+- whether AI adoption is concentrated in particular enterprise-size groups;
+- how innovation investment differs across economies;
+- whether renewable-energy progress and technology capacity move together or diverge;
+- how structural indicators such as GDP per capita and high-tech exports change the interpretation of headline rankings;
+- where missing or non-comparable data prevents a defensible conclusion.
+
+Potential Sustainable Development Goal relevance includes **SDG 7 (Affordable and Clean Energy), SDG 8 (Decent Work and Economic Growth), SDG 9 (Industry, Innovation and Infrastructure) and SDG 13 (Climate Action)**. This mapping identifies analytical domains; it is not a claim of UN endorsement or causal SDG impact.
 
 ## Data sources
 
@@ -37,11 +51,11 @@ OECD R&D indicators are used to examine innovation investment and growth. The wo
 
 ### World Bank — structural economic indicators
 
-The project also integrates World Bank series used to provide wider economic context, including:
+The project integrates World Bank series for wider economic context, including:
 
-- R&D expenditure as a percentage of GDP
-- high-technology exports
-- GDP per capita
+- R&D expenditure as a percentage of GDP;
+- high-technology exports;
+- GDP per capita.
 
 The World Bank series have different availability windows and substantial variation in missingness, so coverage is treated explicitly rather than silently filled.
 
@@ -119,8 +133,6 @@ The table describes the current working analysis and should be regenerated from 
 
 ## Reusable data-quality utilities
 
-The package includes small, testable helpers for the kinds of checks used throughout the project:
-
 ```python
 from eu_analytics.quality import (
     coverage_summary,
@@ -130,7 +142,7 @@ from eu_analytics.quality import (
 )
 ```
 
-These utilities are intentionally separate from notebook presentation code so that data-quality logic can be tested independently.
+These utilities are intentionally separate from notebook presentation code so data-quality logic can be tested independently.
 
 ## Run the quality-control tests
 
@@ -156,27 +168,13 @@ The final analysis is designed to include:
 - high-tech export and GDP context;
 - coverage/missingness diagnostics before cross-source analysis;
 - ranked and longitudinal visualisations;
-- interpretation focused on economic and business meaning rather than chart volume.
+- interpretation focused on economic and policy meaning rather than chart volume.
 
-## Why this project is relevant to data analyst roles
+## Evidence boundaries
 
-The main value of the project is not simply that it contains several charts. It demonstrates the work required **before** trustworthy visualisation:
+This repository demonstrates the reproducible analytical framework and automated quality checks. Cross-country patterns should not be interpreted as causal relationships without an appropriate research design, and apparent rankings should not override differences in temporal coverage or indicator definitions.
 
-1. acquire data from multiple institutional sources;
-2. understand incompatible schemas and frequencies;
-3. clean and standardise identifiers;
-4. inspect missingness and temporal coverage;
-5. construct comparable analytical tables;
-6. choose KPIs that answer a concrete question;
-7. communicate the result without overstating what the data proves.
-
-That workflow maps directly to real analyst work involving operational datasets, dashboards, KPI reporting and stakeholder-facing analysis.
-
-## Publication status
-
-The reusable repository structure and automated quality checks are now in place. The next publication step is to add the **authoritative MSc analysis notebook and final visual outputs** once the current notebook is ready for portfolio release.
-
-Until that source notebook is added, this repository should be treated as the reproducible project framework rather than the final academic submission.
+The authoritative MSc analysis notebook and final visual outputs will be added when ready for portfolio release. Until then, this repository should be treated as the reproducible project framework rather than the final academic submission.
 
 ## Author
 
